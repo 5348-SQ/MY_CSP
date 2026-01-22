@@ -5,4 +5,4 @@ no_name = "N/A"
 no_man2 = "2"
 no_name3 = "3"
 
-printe(no_name, no_nam2, no_name3)
+print(no_name, no_nam2, no_name3)
