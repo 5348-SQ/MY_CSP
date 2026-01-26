@@ -4,6 +4,6 @@
 
 apples = int(input("how many apples are there: "))
 
-friends = int(70.43)
+friends = int(input("How many friends does thou posses: "))
 
 print("each friend gets", apples//friends, "and I have", apples%friends, "left over")
