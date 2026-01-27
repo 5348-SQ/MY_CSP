@@ -1,14 +1,15 @@
 #MY, Financial Calculator
+print("mortal, who seekith financial prosparity, answer the fallowing qustions with numbers or thy seed shall be cursed with redundancy and the eternal status of 'jobless'")
 
-rent = float(input("what is thy rent: "))
+rent = float(input("what is thy rent:USD "))
 
-utu = float(input("what is thy utilities bill: "))
+utu = float(input("what is thy utilities bill:USD "))
 
-grow = float(input("what is thy groceries bill: "))
+grow = float(input("what is thy groceries bill:USD "))
 
-tra = float(input("what is you transport expence amount: "))
+tra = float(input("what is you transport expence amount:USD "))
 
-total_income = float(input("what is thy income: "))
+total_income = float(input("what is thy income:USD "))
 
 total_loss = grow + utu + rent + tra
 
@@ -27,4 +28,9 @@ print("thy groceries bill is $", grow, "which is", int((grow/total_income) * 100
 
 print("thy transport expence is $", tra, "which is", int((tra/total_income) * 100), "precent of thy income.")
 
-print("after paying these expences, you have $", total_income-total_loss, "left, which is", int((total_loss/total_income)*100), "precent of you income. It is advised you add this to your savings")
+
+sav = round((total_income * 0.1), 2)
+
+spend = round((total_income - (sav + total_loss)), 2)
+
+print("Mortal, after paying these expences, you have $", total_income-total_loss, "left, which is", round(((total_loss/total_income)*100),2), "precent of you income. It is advised you add at lest $", sav, "to your savings and set $", spend, "as your spending amount, heed these words or face a curse. NOW BEGONE! ")
