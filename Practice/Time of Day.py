@@ -22,13 +22,13 @@ elif time == 6:
 elif time == 7:
     print("MEELECHK! IT IS THE WORST NUMBER. MAY ITS MUTIPLES BE CURSED!")
 elif time == 8:
-    print("I geuss your chinese or somthing")2
+    print("I geuss your chinese or somthing")
 elif time >= 9 and time <= 16:
     print("WORK WORK WORK")
     print("That was an allusion by the way")
 elif time > 16 and time < 21:
     print("REST REST REST")
 elif time > 21 and time <= 24:
-    print("You need to be asleep, You need to be asleep, You need to be asleep, You need to be asleep, You need to be asleep,You need to be asleep, You need to be asleep, You need to be asleep, You need to be asleep, You need to be asleep.")
+    print("You need to be asleep, You need to be asleep, You need to be asleep, You need to be asleep, You need to be asleep,You need to be asleep, You need to be asleep, You need to be asleep, You need to be asleep, You need to be asleep.You need to be asleep, You need to be asleep, You need to be asleep, You need to be asleep, You need to be asleep,You need to be asleep, You need to be asleep, You need to be asleep, You need to be asleep, You need to be asleep. You need to be asleep, You need to be asleep, You need to be asleep, You need to be asleep, You need to be asleep,You need to be asleep, You need to be asleep, You need to be asleep, You need to be asleep, You need to be asleep.")
 else:
     print("An instence of entity DECO-UI has been loged, thank you for the report Agent.")
