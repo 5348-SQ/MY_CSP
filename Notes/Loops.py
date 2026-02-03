@@ -2,7 +2,7 @@
 import random #Libary imported is always at top
 
 
-count = 0
+'''count = 0
 
 while count <= 10:
     print(count)
@@ -38,7 +38,10 @@ while True:
     elif guess < number:
         print("More")
     elif guess > number:
-        print("Less")
+        print("Less")'''
 #break forces loop to stop when its hit
 
+#iteration is => repetition wiht small changes
 
+for i in range(20):
+    print(f"My code has iterated {i} times")
