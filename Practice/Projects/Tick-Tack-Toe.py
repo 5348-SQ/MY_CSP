@@ -19,9 +19,13 @@ def printboard():
     print("-----")
     print(f"{s_list[6]}|{s_list[7]}|{s_list[8]}")
 
+def check(checked):
+    if type(s_list[checked]) == str:
+        return True
 
 
 #set up zone
+print("All inputs must be intigers")
 
 s_list = [1, 2, 3, 4, 5, 6, 7, 8, 9]
 
@@ -41,30 +45,33 @@ while winner == 0:
     while playerlooplock == 0:
         choice = int(input("Which place would you like to change?: "))-1
 
-        if s_list[c hoice] == "o" or s_list[choice] == "x": 
+        if s_list[choice] == "o" or s_list[choice] == "x": 
             print("That spot is taken, try again.")
         else:
             playerlooplock += 1
 
 
-    s_list[numb_choice] = "x"
+    s_list[choice] = "x"
 
 #computer answer zone
 
-    computer_c_looplock = 0
+    computer_looplock = 0
 
-    while C == 0:
+    while computer_looplock == 0:
       #random.choice returns the item itself not the index # of the item
         computer_choice = random.choice(s_list)
-        prcom_choicent(computer_choice)
+    
         if not computer_choice == "o" and not computer_choice == "x": 
-            C += 1
+            computer_looplock += 1
+            s_list[computer_choice-1] = "o"
+        elif check(0) == True and check(1) == True and check(2) == True and check(3) == True and check(4) == True and check(5) == True and check(6) == True and check(7) == True and check(8) == True:
+            computer_looplock += 1
+            print("Tie!")
     
-    s_list[computer_choice-1] = "o"
-
-#Win check zone
-
     
+   
+
+#Win check                              
     winner += who_win( s_list[0], s_list[1], s_list[2])
     
     winner += who_win( s_list[3], s_list[4], s_list[5])
@@ -86,7 +93,7 @@ while winner == 0:
 
 if winner == 1:
     #then player won
-    print("Congradulation you won!")
+    print("Congradulations you win!")
 
     printboard()
 
