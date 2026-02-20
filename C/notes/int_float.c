@@ -23,7 +23,7 @@ int main(){
 
     printf("%.4f, %.2f, %.3f\n", ex_one, ex_two, ex_three);
 
-    printf("f\n", sqrt(20))
+    printf("f\n", sqrt(20)):
 
     return 0;
 }
