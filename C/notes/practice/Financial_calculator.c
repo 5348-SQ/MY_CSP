@@ -1,6 +1,11 @@
 //MY P6 Financial_Calculator
 
+#include <stdio.h>
+
+#include <math.h>
+
 int main(){
+
     float inco;
     float rent;
     float util;
