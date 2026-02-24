@@ -28,7 +28,7 @@ int main(){
     printf("\nWhat is thy transportation expence?:$ ");
     scanf("%f", &tran);
 
-    printf("\nYour rent is %.2f and that is %.2f precent of your income", rent, int((rent/inco)*100));
+    printf("\nYour rent is %.2f and that is %.2f precent of your income", rent, (rent/inco)*100);
 
     return 0;
 
