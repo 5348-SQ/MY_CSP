@@ -28,6 +28,10 @@ int main(){
     printf("\nWhat is thy transportation expence?:$ ");
     scanf("%f", &inco);
 
-    printf("\nYour rent is %f and that is %.2f precent of your income", &rent, &(rent/inco)*100);
+    float rent_precent = round((rent/inco)*100);
+
+    printf("\nYour rent is %f and that is %f precent of your income", &rent, &rent_precent);
+
+    return 0;
 
 }
