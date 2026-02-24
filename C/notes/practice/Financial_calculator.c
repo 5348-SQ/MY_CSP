@@ -16,7 +16,7 @@ int main(){
     printf("What is thy income?:$ ");
     scanf("%f", &inco);
 
-    printf("\nWhat is thy rent?:$ ");
+    printf("\nWhat is thy rent?: ");
     scanf("%f", &rent);
 
     printf("\nWhat is thy utilities?:$ ");
@@ -26,11 +26,9 @@ int main(){
     scanf("%f", &groc);
 
     printf("\nWhat is thy transportation expence?:$ ");
-    scanf("%f", &inco);
+    scanf("%f", &tran);
 
-    float rent_precent = round((rent/inco)*100);
-
-    printf("\nYour rent is %f and that is %f precent of your income", &rent, &rent_precent);
+    printf("\nYour rent is %.2f and that is %.2f precent of your income", rent, int((rent/inco)*100));
 
     return 0;
 
