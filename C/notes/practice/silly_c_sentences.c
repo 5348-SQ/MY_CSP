@@ -1,4 +1,4 @@
-//My P6 Silly sentences
+//MY P6 Silly sentences
 
 #include <stdio.h>
 
