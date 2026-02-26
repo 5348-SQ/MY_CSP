@@ -41,10 +41,5 @@ int main(){
         printf("welcome %s!", name);
     };
 
-
-    
-    
-
-
     return 0;
 }
