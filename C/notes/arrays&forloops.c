@@ -1,6 +1,10 @@
 //MY arrays
 
 #include <stdio.h>
+//for random
+#include <time.h>
+#include <stdlib.h>
+
 
 int main(){
     //Example 1
@@ -24,6 +28,30 @@ int main(){
 
 
     //first bracket is items in list and second are max charicters per item
+
+    //for loops example 1
+
+    for(int a = 20; 1 <= 0; a--){
+        //"--" = "-1"
+        printf("%d", a);
+    }
+
+    //for loops example 2
+    int grade_len = sizeof(grades)/ sizeof(grades[0]);
+    for(int index = 0; index < grade_len; index++){
+        printf(" %d", grades[index] + 5);
+
+    }
+
+    //for loops example 3
+    srand(time(NULL));
+    int goose = rand() %15 +1;
+
+    for(int count = 1; count < goose; count++){
+        printf("\nduck");
+    }
+    printf("\nGoooooooose!");
+
 
     return 0;
 }
