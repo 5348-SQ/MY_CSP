@@ -15,19 +15,21 @@
 char board_state[9] = {'0', '1', '2', '3', '4', '5', '6', '7', '8'};
 bool anyone_won = false;
 
+bool player_won = false;
+bool computer_won = false;
+
+int total_computer_tries = 0;
+
 // Win check funciton made by MY
 
-int winner_finder(char first_in_row, char second_in_row, char thrird_in_row){
+void winner_finder(char first_in_row, char second_in_row, char thrird_in_row){
     if ( first_in_row == 'X' && second_in_row == 'X' && thrird_in_row == 'X'){
         //Then player won
-        return 1;
+        player_won = true;
     }
     else if ( first_in_row == 'O' && second_in_row == 'O' && thrird_in_row == 'O'){
         //Then computer won
-        return 2;
-    }
-    else{
-        return 0;
+        computer_won = true;
     }
 }
 
@@ -83,14 +85,40 @@ int main(){
 
         //Computer answer zone written by MY
         bool valid_computer_choice = false;
+        int computer_tries = 0;
+
         while(valid_computer_choice == false){
             int computer_choice = rand() %8;
-            if (board_state[computer_choice] == )
+            
+            if (board_state[computer_choice] == 'X' || board_state[computer_choice] == 'O' || computer_choice < 0 || computer_choice > 8 ){
+                //Nothing Really happens
+                computer_tries++;
+            }
+            else if(computer_tries > 34){
+                printf("THE MACHINE SPIRT HAS SPOKEN!\nIT GAVE UP\nYOU WIN");
+                player_won = true;
+                anyone_won = true;
+                valid_computer_choice = true;
+            }
+            else{
+                valid_computer_choice = true;
+                board_state[computer_choice] = 'O';
+            }
         }
+        if (computer_tries > 0){
+                printf("FUN FACT IT TOOK THE COMPUTER %d ATTEMPTS TO FIND A VALID SPACE\n", computer_tries);
+                total_computer_tries = total_computer_tries + computer_tries;
+            }
+
+        //BUILD HERE DAN
 
 
-
-        //MAKE THING THAT SETS ANYONE TO TRUE WHEN COM OR PLAYER WON
+        
     }
+    printf("DEV NOTIFICATION: PRIMARY WHILE LOOP BROKE");
+    //MAKE THING THAT SETS ANYONE TO TRUE WHEN COM OR PLAYER WON
+
+
+    printf("FUN FACT IT TOOK THE COMPUTER A TOTAL OF %d ATTEMPTS TO FIND A VALID SPACE FOR THIS GAME TO END", total_computer_tries);
     return 0;
 }
