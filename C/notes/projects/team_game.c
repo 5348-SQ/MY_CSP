@@ -1,4 +1,4 @@
-//P6, MY D?, Programming Project - C
+//P6, MY DS, Programming Project - C
 #include <stdio.h>
 #include <string.h>
 #include <stdbool.h>
@@ -17,6 +17,7 @@ bool anyone_won = false;
 
 bool player_won = false;
 bool computer_won = false;
+bool tie = false;
 
 int total_computer_tries = 0;
 
@@ -26,10 +27,12 @@ void winner_finder(char first_in_row, char second_in_row, char thrird_in_row){
     if ( first_in_row == 'X' && second_in_row == 'X' && thrird_in_row == 'X'){
         //Then player won
         player_won = true;
+        anyone_won = true;
     }
     else if ( first_in_row == 'O' && second_in_row == 'O' && thrird_in_row == 'O'){
         //Then computer won
         computer_won = true;
+        anyone_won = true;
     }
 }
 
@@ -59,6 +62,7 @@ int main(){
 
     while (anyone_won == false){
 
+        printf("\n");
         printboard();
 
         //Player answer zone made by My
@@ -88,37 +92,61 @@ int main(){
         int computer_tries = 0;
 
         while(valid_computer_choice == false){
-            int computer_choice = rand() %8;
-            
-            if (board_state[computer_choice] == 'X' || board_state[computer_choice] == 'O' || computer_choice < 0 || computer_choice > 8 ){
-                //Nothing Really happens
-                computer_tries++;
-            }
-            else if(computer_tries > 34){
-                printf("THE MACHINE SPIRT HAS SPOKEN!\nIT GAVE UP\nYOU WIN");
-                player_won = true;
+            int computer_choice = rand() %9; 
+            if(computer_tries > 34){
+                tie = true;
                 anyone_won = true;
                 valid_computer_choice = true;
             }
+            else if (board_state[computer_choice] == 'X' || board_state[computer_choice] == 'O'){
+                //Nothing Really happens
+                computer_tries++;
+            }
+           
+        
             else{
                 valid_computer_choice = true;
                 board_state[computer_choice] = 'O';
             }
         }
         if (computer_tries > 0){
-                printf("FUN FACT IT TOOK THE COMPUTER %d ATTEMPTS TO FIND A VALID SPACE\n", computer_tries);
+                printf("\nFUN FACT IT TOOK THE COMPUTER %d ATTEMPT(S) TO FIND A VALID SPACE\n", computer_tries);
                 total_computer_tries = total_computer_tries + computer_tries;
             }
 
-        //BUILD HERE DAN
+        //Win Conditions by DS
+        winner_finder(board_state[0],board_state[1], board_state[2]);
+        winner_finder(board_state[3],board_state[4], board_state[5]);
+        winner_finder(board_state[6],board_state[7], board_state[8]);
+        winner_finder(board_state[0],board_state[4], board_state[8]);
+        winner_finder(board_state[2],board_state[4], board_state[6]);
+        winner_finder(board_state[0],board_state[3], board_state[6]);
+        winner_finder(board_state[1],board_state[4], board_state[7]);
+        winner_finder(board_state[2],board_state[5], board_state[8]);
+
 
 
         
     }
-    printf("DEV NOTIFICATION: PRIMARY WHILE LOOP BROKE");
-    //MAKE THING THAT SETS ANYONE TO TRUE WHEN COM OR PLAYER WON
+    printf("\nDEV NOTIFICATION: PRIMARY WHILE LOOP BROKE\n");
+    //Win results zone made by DS
+    if (player_won == true){
+        printf("\n");
+        printboard();
+        printf("\nYou win");
+    }
 
-
-    printf("FUN FACT IT TOOK THE COMPUTER A TOTAL OF %d ATTEMPTS TO FIND A VALID SPACE FOR THIS GAME TO END", total_computer_tries);
+    else if (computer_won==true){
+        printf("\n");
+        printboard();
+        printf("\nYou lost");
+    }
+    else if (tie == true){
+        printf("\n");
+        printboard();
+        printf("\nTHE COMPUTER HAS SPOKEN\nIT GAVE UP\n You win by defult");
+    }
+    // FUN FACT made by MY
+    printf("\n\nFUN FACT: IT TOOK THE COMPUTER A TOTAL OF %d ATTEMPTS TO FIND A VALID SPACE FOR THIS GAME TO END.", total_computer_tries);
     return 0;
 }
