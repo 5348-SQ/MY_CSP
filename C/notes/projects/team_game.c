@@ -10,7 +10,7 @@
 
 //Maybe if I feel funny I will change the win condition to the player being in a tie -MY
 
-//global varibal set up
+//global varibal set up made by MY
 
 char board_state[9] = {'0', '1', '2', '3', '4', '5', '6', '7', '8'};
 bool anyone_won = false;
