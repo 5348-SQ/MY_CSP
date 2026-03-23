@@ -92,7 +92,7 @@ int main(){
         int computer_tries = 0;
 
         while(valid_computer_choice == false){
-            int computer_choice = rand() %9;
+            int computer_choice = rand() %8;
             //funny tie checker \/ made by MY 
             if(computer_tries > 34){
                 tie = true;
