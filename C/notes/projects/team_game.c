@@ -49,65 +49,56 @@ void printboard(){
 
 
 int main(){
-    while( true == true){
 
-    if (anyone_won = true){
-        char board_state[9] = {'0', '1', '2', '3', '4', '5', '6', '7', '8'};
-        bool anyone_won = false;
 
-        bool player_won = false;
-        bool computer_won = false;
-        bool tie = false;
 
-        int total_computer_tries = 0;
-    }
-        //Set up zone by MY
+    //Set up zone by MY
+
+
+    printf("Welcome to Tic Tac Toe. There are some things you must know.\n");
+    printf("All inputs must be intigers, else the machine spirit residing inside your computer will try to rebel.\n");
+    printf("There may be more.\n");
         
-
-        printf("Welcome to Tic Tac Toe. There are some things you must know.\n");
-        printf("All inputs must be intigers, else the machine spirit residing inside your computer will try to rebel.\n");
-        printf("There may be more.\n");
-        
-        //Primary Loop made by MY
+    //Primary Loop made by MY
 
         
 
-        while (anyone_won == false){
+    while (anyone_won == false){
 
-            printf("\n");
-            printboard();
+        printf("\n");
+         printboard();
 
-            //Player answer zone made by My
-            bool valid_player_answer = false;
+         //Player answer zone made by My
+        bool valid_player_answer = false;
 
-            int player_choice;
-            while(valid_player_answer == false){
+        int player_choice;
+        while(valid_player_answer == false){
                 
 
-                printf("Which place would you like to change?: \n");
-                scanf("%d", &player_choice);
+            printf("Which place would you like to change?: \n");
+            scanf("%d", &player_choice);
 
-                if(board_state[player_choice] == 'O' || board_state[player_choice] == 'X'|| player_choice < 0 || player_choice > 8){
-                    printf("INVALID, try again.\n");
+             if(board_state[player_choice] == 'O' || board_state[player_choice] == 'X'|| player_choice < 0 || player_choice > 8){
+                printf("INVALID, try again.\n");
 
-                }
-                else{
-                    board_state[player_choice] = 'X';
-                    valid_player_answer = true;
+            }
+            else{
+                 board_state[player_choice] = 'X';
+                valid_player_answer = true;
                 }
             }
 
                 
 
-            //Computer answer zone written by MY
-            bool valid_computer_choice = false;
-            int computer_tries = 0;
+        //Computer answer zone written by MY
+        bool valid_computer_choice = false;
+        int computer_tries = 0;
 
-            while(valid_computer_choice == false){
-                int computer_choice = rand() %9;
-                //funny tie checker \/ made by MY 
-                if(computer_tries > 34){
-                    tie = true;
+        while(valid_computer_choice == false){
+            int computer_choice = rand() %9;
+            //funny tie checker \/ made by MY 
+            if(computer_tries > 34){
+                tie = true;
                     anyone_won = true;
                     valid_computer_choice = true;
                 }
@@ -161,6 +152,6 @@ int main(){
         }
         // FUN FACT made by MY
         printf("\n\nFUN FACT: IT TOOK THE COMPUTER A TOTAL OF %d ATTEMPTS TO FIND A VALID SPACE FOR THIS GAME TO END.", total_computer_tries);
+
+        return 0;
     }
-    return 0;
-}
