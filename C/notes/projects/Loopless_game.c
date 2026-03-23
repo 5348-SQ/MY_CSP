@@ -148,6 +148,6 @@ int main(){
         printf("\nTHE COMPUTER HAS SPOKEN\nIT GAVE UP\n You win by defult");
     }
     // FUN FACT made by MY
-    printf("\n\nFUN FACT: IT TOOK THE COMPUTER A TOTAL OF %d FAILED ATTEMPTS TO FIND A VALID SPACE FOR THIS GAME TO END.", total_computer_tries);
+    printf("\n\nFUN FACT: THE COMPUTER HAD A TOTAL OF %d FAILED ATTEMPTS TO FIND A VALID SPACE DURING THIS GAME.", total_computer_tries);
     return 0;
 }
