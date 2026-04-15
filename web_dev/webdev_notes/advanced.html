@@ -3,18 +3,40 @@
     <head>
         <title> Notes on Advanced HTML</title>
         <meta charser="UTF-8"/>
+        <!-- Embeded style sheet are good practive, they do in head tag-->
+         <style>
+            *{
+                background-color: rgba(40, 73, 145, 0.288);
+            }
+            #ordered{
+                background-color: aqua;
+                border: 5px  solid whitesmoke;
+            }
+            .odd{
+                color: orange;
+                background-color: #933abd;
+            }
+            h1{
+                font-size: 29%;
+            }
+            img{
+               width: 100%;
+
+            }
+         </style>
     </head>
     <body>
         <h1> Advanced HTML</h1>
+        <!-- This is an inline style, it is BAD syntax-->
         <div style="background-color: aquamarine; height:100px; width:100px">
             <p>This is a div, which divides styled sections</p>
         </div>
         <p>This is how you make an ordered (numbered) list</p>
         <div id="ordered">
         <ol>
-            <li>CSP</li>
+            <li class="odd">CSP</li>
             <li>CP1</li>
-            <li>ADP</li>
+            <li class="odd">ADP</li>
         </ol>
         <p>This is how you make an unordered list (bullteted list)</p>
         <ul>
