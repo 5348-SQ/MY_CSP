@@ -1,12 +1,20 @@
 <!DOCTYPE html>
 <html lang="eng">
     <head>
+        <link rel="preconnect" href="https://fonts.googleapis.com">
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link href="https://fonts.googleapis.com/css2?family=Libre+Barcode+39+Text&display=swap" rel="stylesheet">
         <title> Notes on Advanced HTML</title>
         <meta charser="UTF-8"/>
         <!-- Embeded style sheet are good practive, they do in head tag-->
          <style>
-            *{
+            body{
                 background-color: rgba(40, 73, 145, 0.288);
+                
+                font-family: "Libre Barcode 39 Text", system-ui;
+                font-weight: 400;
+                font-style: normal;
+                
             }
             #ordered{
                 background-color: aqua;
@@ -18,36 +26,63 @@
             }
             h1{
                 font-size: 29%;
+                margin: 99px;
             }
             img{
                width: 100%;
 
+            }
+            #bold{
+                font-weight: bolder;
+            }
+            .boxwrap{
+                display: box;
+                margin: auto;
+                width: 20%
+            }
+            #Lwrap{
+                display: grid;
+                grid-template-columns: 50% 50%;
+
+            }
+            #imgw{
+                display: flex;
+                justify-content: center;
+                flex-wrap: wrap;
             }
          </style>
     </head>
     <body>
         <h1> Advanced HTML</h1>
         <!-- This is an inline style, it is BAD syntax-->
+        <div class="boxwrap">
         <div style="background-color: aquamarine; height:100px; width:100px">
             <p>This is a div, which divides styled sections</p>
         </div>
+        </div>
         <p>This is how you make an ordered (numbered) list</p>
+        <div id="Lwrap">
         <div id="ordered">
         <ol>
             <li class="odd">CSP</li>
             <li>CP1</li>
             <li class="odd">ADP</li>
         </ol>
+        </div>
         <p>This is how you make an unordered list (bullteted list)</p>
         <ul>
             <li>A</li>
             <li>B</li>
-            <li>C</li>
+            <li><span id= bold>To bold</span></li>
         </ul>
         </div>
+        
         <a href="https://docs.google.com/document/d/19Vrnu22l0Ibd-_chUEvalZYpkJNO-5sgBCM0q468ttE/edit?tab=t.0" target="_blank">Notes</a>
         
-        
-        <img scr="https://www.cnet.com/a/img/resize/13579e8bed396530cf6c17a54226646a18b3f62e/hub/2026/01/07/ca21282f-6c31-406c-8959-fb96e1b98eae/img-3966.jpg?auto=webp&fit=crop&height=675&width=1200" alt="Cool_Bot.ping" height="100px"/>
+        <div id="imgw">
+        <img src="https://www.mahq.net/wp-content/uploads/2022/11/msn-02-perfect-msv.jpg" alt="Cool_Bot.ping" height="100px"/>
+        <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTPBwOtrS9GV5FMboKTGKLRq3jLJSklTOTCeA&s" alt="Cool_Bot.ping" height="100px"/>
+        <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTPBwOtrS9GV5FMboKTGKLRq3jLJSklTOTCeA&s" alt="Cool_Bot.ping" height="100px"/>
+         </div>
     </body>
 </html>
