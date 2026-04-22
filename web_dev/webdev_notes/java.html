@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <title> Java notes</title>
+        <meta charset="UTF-8">
+        <style>
+            img{
+                width: 50%;
+            }
+        </style>
+        <script>
+            let count = 0
+            let img_count = 0
+            let imgs = ["https://pub-1643c7ad06a44454b7b695dc1d1dc22d.r2.dev/website2025/utils/apple-touch-icon.png", "https://img.freepik.com/free-photo/closeup-shot-beautiful-butterfly-with-interesting-textures-orange-petaled-flower_181624-7640.jpg?semt=ais_hybrid&w=740&q=80", "https://www.danceinforma.com/wp-content/uploads/2025/01/IMGE-Dances-noman.-Photo-by-Jim-Coleman-1024x1024.jpg"]
+
+            function change(){
+                if(img_count >= imgs.length){
+                    img_count = 0
+                }else{
+                    img_count += 1
+                }
+                document.getElementById("nottimp").scr = imgs[img_count]
+            }
+            function add(){
+                count += 1
+                document.getElementById('number').innerHTML = count
+            }
+            function color_change(){
+                document.getElementById("shift").style.color = document.getElementById('selected-color').value
+            }
+            function hover(id){
+                document.getElementById(id).style.backgroundColor= "red"
+                document.getElementById(id).style.color = "white"
+            }
+            function unhover(id){
+                document.getElementById(id).style.backgroundColor= "lightgray"
+                document.getElementById(id).style.color = "black"
+            }
+            function popup(){
+                alert("This is about Javascript")
+
+            }
+            function show(){
+                if(document.getElementById("nottimp").style.display == "block"){
+                    document.getElementById("nottimp").style.display = "none"
+                }else{
+                    document.getElementById("nottimp").style.display = "block"
+                }
+            }
+        </script>
+    </head>
+    <body>
+        <h1 id="shift" onclick="popup()"> Java Notes</h1>
+        <input type="color" id="selected-color"/>
+        <button onclick="color_change()" onmouseover="hover('one')" onmouseout="unhover('one')" id="one">Change Color</button>
+        <p id="number">0</p>
+        <button onclick="add()" onmouseover="hover('two')" onmouseout="unhover('two')" id="two">Increase</button>
+        <br>
+        <img onmouseover="show()"  id="nottimp" src="https://pub-1643c7ad06a44454b7b695dc1d1dc22d.r2.dev/website2025/utils/apple-touch-icon.png" alt="nottimp" onmouseover="change()">
+    </body>
+</html>
