@@ -4,7 +4,23 @@
         <link rel="preconnect" href="https://fonts.googleapis.com">
         <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
         <link href="https://fonts.googleapis.com/css2?family=M+PLUS+1+Code:wght@100..700&display=swap" rel="stylesheet">
+        <script>
+            let img_count = 0
 
+            let botmention = ["https://www.mahq.net/wp-content/uploads/2022/11/ms-06f-new2-591x1024.jpg", "https://xboxmedia.ign.com/xbox/image/steelbattmechin1.jpg", "https://www.mahq.net/wp-content/uploads/2023/01/rgm-79-1-557x1024.jpg", "https://www.sideshow.com/cdn-cgi/image/quality=90,f=auto/https://www.sideshow.com/storage/product-images/902258/atlas-titanfall_titanfall_silo.png", "https://i.namu.wiki/i/LAB68avWI7-j-VFMVb_Vdmra1sQUsVr6lqe-eilidPb5FkkAOBt50Qg-TRrbhK65sYCX_yUdDNSqNgCJFsOHOA.webp"]
+            
+            function show(){
+                document.getElementById("hidden").style.display = "block"
+            }
+            function change(){
+                img_count += 1
+                if(img_count >= botmention.length){
+                    img_count = 0
+                }
+                
+                document.getElementById("botlist").src = botmention[img_count]
+            }
+        </script>
         <style>
             h1{
                 background-color: black;
@@ -23,10 +39,10 @@
             }
             h2{
                 color: orange;
-                padding: 5%;
+                padding: 2%;
             }
             p{
-                padding: 1%;
+                padding: 5%;
             }
             img{
                 
@@ -44,6 +60,9 @@
                 color: white;
                 padding: 5%;
             }
+            #hidden{
+                display: none;
+            }
         </style>
         <title> Cool Kid's Guide to Mechs and Other Inspirng Machines </title>
         <meta charser="UTF-8">
@@ -58,16 +77,18 @@
         <p> Weclome, web serfer to a <i>Cool Kid's Guide to Mechs and Other Inspirng Machines</i>; a commplation of insperation regarding the creation of cool machines, that does so with much levity. The primary purpose of this catalog of machines is too share the things that inspire me to build my TTRPG <i>Mechanical Bellicose</i> , which are primarly the many Real mechs of Sc-Fi.</p>
         <h2>Wait... Whats a mech?</h2>
         <p>Im so glad you asked (you todally did, right?) Mechs, which also go by many names so numerus I can't be bothered to list them, have no universally agred upon definiton but the best I have found is "<i>A huminoid machine, ussally made for military applications, that contains a human pilot who controles the machine from within an isolated cockpit contained inside the machine</i>". Although this definaition may be overiden by gut feeling and other complications on a case to case basis. This defintion of Mech is based on SCIENSE INSANITIY's <a href="https://youtu.be/rDUOSSDWOQ0?si=NeMSNbgHql3YS2xj"> video about mech types</a>, who also properly articulated the reason people, like me, love mechs with the statment "BIG STOMPY ROBOT GO BRRRRRRR". Although, he forgot to mention that "BIG GUN ALSO GO BRRRRRRRRRR", which makes me mildly disapointed.</p>
-        <h2> You mentioned "Real" Mechs. <br> Does this mean we have Mechs in real life?</h2>
+        <h2 onclick="show()"> You mentioned "Real" Mechs. <br> Does this mean we have Mechs in real life?<br>(Click Me! Please, if its not wired for you)</h2>
+        <div id="hidden">
         <p> No, "Real" is one of the two primary catagories of mech, which most mecha-lovers use to chatagorize mechs. These catagories are "Real" and "Super". "Super" mechs are mechs that act more like a superhero rather then a pice of military hardware. Some good examples of this are the giant robots in <i>Power Rangers</i> and the anime <i>Gund Sword</i> (its on Crunchyroll). Common attributes of "S" "Real" mechs are mechs that the naritive treats as real pices of military hardware rather then super heros. Some examples of this style include:</p>
             <ul>
                 <li>MS-06 Zaku II from <i>Mobile Suit Gundam</i>.</li>
                 <li>Verticle Tanks from <i>Steel Batlion</i>.</li>
-                <li>MSN-02 Zeong from <i>Mobile Suit Gundam</i>.</li>
                 <li>RGM-79 GM from <i>Mobile Suit Gundam</i>.</li>
-                <li>Tone from <i>Titan Fall 2</i>.</li>
+                <li>Atlas from <i>Titan Fall</i>.</li>
                 <li>EVA Unit 02 from <i>Neon Genesis Evangelion</i>.</li>
             </ul>
+        <p> Click the Image to cycle which bot from list is being shown. They are shown in order of their listing, starting with the Zaku.</p>
+        <img onclick="change()" src ="https://www.mahq.net/wp-content/uploads/2022/11/ms-06f-new2-591x1024.jpg" id="botlist"  alt="it's broken [sad_face]">
         <p> I care primarly about these "Real" robots rather then the super ones, becuse I find them intresting as result of them producing a kind of "grounded" feeling, probably due to how they have fictional military history and realistic aesthetics. A cool example of this fictional military history is the MSN-02 Zeong from <i>Mobile Suit Gundam</i>, which was deployed without its legs due to urgent wartime demand and its status as a space-use-only unit, making legs unnecessary for mobility and combat effectivness.</p>
 
         <div id="gel">
@@ -75,6 +96,7 @@
         <img src="https://www.mahq.net/wp-content/uploads/2022/11/msn-02-perfect-msv.jpg" alt="Leg-with_bot.ping"/>
         <p id="caption">======><br>Zeong without legs; its standard foarm.</p>
         <img src="https://www.mahq.net/wp-content/uploads/2023/01/msn-02-msv-768x875.jpg" alt="Legless_bot.ping"/>
+        </div>
         </div>
     </body>
 </html>
