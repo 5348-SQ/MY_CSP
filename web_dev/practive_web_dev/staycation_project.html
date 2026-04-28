@@ -2,23 +2,50 @@
 <html lang="eng">
     <head>
         <script>
-            change(){
-                document.getElementById("firstdiv").style.display = "flex"
+            let pictlist = ["https://followthatnerd.com/wp-content/uploads/2021/02/D72_6986.jpg", "https://blog.annemckinnell.com/wp-content/uploads/2012/07/utah_20120511__MG_3195-Edit_lg.jpg"]
+            function change(id){
+                document.getElementById(id).style.display = "block"
+            }
+            let imgstate = 0
+            function changeimg(){
+
             }
         </script>
         <style>
             body{
-                background-color: rgb(211, 134, 18);
-                color: rgb(0, 102, 255);
+                background-color: rgb(185, 118, 17);
+                color: rgb(0, 204, 255);
                 margin: 5%;
             }
+            #maindiv{
+                display: grid;
+                grid-template-columns: 50% 50%;
+                grid-template-rows: 100%;
+
+            }
             #firstdiv{
+                padding: 4%;
                 display: none;
             }
             #seconddiv{
+                padding: 4%;
                 display: none;
             }
-
+            h1{
+                display: flex;
+                justify-content:center;
+            }
+            #leftside{
+                margin: 10%;
+               grid-column-start: 1;
+               grid-row: 1;
+                
+            }
+            #rightside{
+                margin: 10%;
+                grid-column-start: 2;
+                grid-row: 1;
+            }
         </style>
         <title> You Should visit Goblin Vally!</title>
         <meta charser="UTF-8">
@@ -26,12 +53,21 @@
     </head>
     <body>
         <h1>You Should visit Goblin Vally State Park!</h1>
-        <button onclick="change()">Whats that?</button>
+        <div id="maindiv">
+        <div id="rightside">
+        <button onclick="change('firstdiv')">Whats that?</button>
+        <br>
         <div id="firstdiv">
-        <p>Well well well, Goblin Vally is a state park in Utah characterized by looking like mars. This comes from the numerus sandstone goblins, which are mushroom-shaped rock formations (see picture 1) and the red/orange-ish colored, rocky landscape (see pic 2). Additonaly, its only a three hour drive from the provo airport making it mildly accessible.</p>
+        <p>Well well well, Goblin Vally is a state park in Utah characterized by looking like mars. This comes from the numerus sandstone goblins, which are mushroom-shaped rock formations (hover over picture 1) and the red/orange-ish colored, rocky landscape (see pic 2). Additonaly, its only a three hour drive from the provo airport making it mildly accessible.<br>To hide this section, click the button again.</p>
+        <img onmouseover="changeimg" src=  alt="It's broken">
         </div>
-        <button onclick="">Why Would I visit?</button>
-        <div>
+        </div>
+
+
+        <div id="leftside">
+        <button onclick="change('seconddiv')">Why Would I visit?</button>
+        <br>
+        <div id="seconddiv">
         <p>Becuse....</p>
         <ol>
             <li>You can roam freelly around the vally.</li>
@@ -39,6 +75,9 @@
             <li>There is disk golf and mountin bike trails.</li>
             <li>You can even bring your dog.</li>
         </ol>
+        <p>To hide this section, click the button again.</p>
+        </div>
+        </div>
         </div>
         
     </body>
